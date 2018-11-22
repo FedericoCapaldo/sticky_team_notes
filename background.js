@@ -4,9 +4,9 @@ function onClickHandler(info, tab) {
 	console.log("tab: " + JSON.stringify(tab));
 }
 
-let context = "selection"
+let context = "all"
 chrome.contextMenus.create({
-	"title": "Write a note",
+	"title": "Write a Sticky Note",
 	"contexts": [context],
 	"onclick": onClickHandler
 });
