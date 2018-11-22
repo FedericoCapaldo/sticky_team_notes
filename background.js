@@ -1,13 +1,11 @@
 function onClickHandler(info, tab) {
-	console.log("item " + info.menuItemId + " was clicked");
-	console.log("info: " + JSON.stringify(info));
-	console.log("tab: " + JSON.stringify(tab));
+	chrome.tabs.executeScript(tab.id, {file: 'save_note.js', allFrames: true});
 }
 
-let context = "all"
 chrome.contextMenus.create({
 	"title": "Write a Sticky Note",
-	"contexts": [context],
+	"contexts": ["all"],
+	"documentUrlPatterns": ["*://*/*"],
 	"onclick": onClickHandler
 });
 

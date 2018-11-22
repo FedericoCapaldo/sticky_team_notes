@@ -6,16 +6,16 @@
            "48": "icon.png",
           "128": "icon.png" },
   "permissions": [
+    "*://*/*",
     "activeTab",
     "contextMenus"
   ],
-  "content_scripts": [ {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": ["sample.js"]
-    } ],
+  "content_scripts": [{
+      "matches": ["*://*/*"],
+      "js": ["save_last_element.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+  }],
   "background" : {
     "scripts": ["background.js"]
   },
