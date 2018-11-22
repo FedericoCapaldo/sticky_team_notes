@@ -1,0 +1,20 @@
+{
+  "name": "Sticky Team Notes",
+  "version": "1.0",
+  "description": "Makes notes on any website. Share them across a team.",
+  "icons": { "16": "icon.png",
+           "48": "icon.png",
+          "128": "icon.png" },
+  "permissions": [
+    "activeTab",
+    "contextMenus"
+  ],
+  "content_scripts": [ {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["sample.js"]
+    } ],
+  "manifest_version": 2
+}
